@@ -1,5 +1,3 @@
-//https://github.com/RAVANA-SL/slRavana
-
 const fs = require('fs');
 
 class StringSession {
@@ -7,7 +5,7 @@ class StringSession {
     }
 
     deCrypt(string = undefined) {
-        if ('RAVANA_SESSION' in process.env && string === undefined) {
+        if ('STEFANIE_SESSION' in process.env && string === undefined) {
             string = process.env.STRING_SESSION;
         } else if (string !== undefined) {
             if (fs.existsSync(string)) {
@@ -22,7 +20,7 @@ class StringSession {
     }
 
     createStringSession(dict) {
-        return 'RAVANA;;;' + Buffer.from(JSON.stringify(dict)).toString('base64');
+        return 'STEFANIE;;;' + Buffer.from(JSON.stringify(dict)).toString('base64');
     }
 }
 
